@@ -5,6 +5,12 @@ const previewCapture = document.getElementById("preview-capture");
 const downloadButton = document.getElementById("download-button");
 const closeButton = document.getElementById("close-button");
 var element = document.getElementById("cover");
+const gisButton = document.getElementById("gis");
+const smcButton = document.getElementById("smc");
+var logoImage = document.getElementById("logo-img");
+var companyName = document.getElementById("company-name");
+var tagLine = document.getElementById("tag-line");
+
 
 
 captureButton.addEventListener("click", async () => {
@@ -20,4 +26,22 @@ captureButton.addEventListener("click", async () => {
 closeButton.addEventListener("click", async () => {
     element.style.justifyContent = "center";
     captureButtonStyle.classList.remove("invisible");
-})
+});
+
+gisButton.addEventListener("click", async () => {
+    smcButton.classList.remove("active");
+    smcButton.classList.add("text-white");
+    gisButton.classList.add("active");
+    gisButton.classList.remove("text-white");
+    logoImage.src='img/LOGO GIS × SMC (Dark Version).png';
+    companyName.textContent="CV. GRISLIN INTERNET SOLUTION";
+});
+
+smcButton.addEventListener("click", async () => {
+    smcButton.classList.add("active");
+    smcButton.classList.remove("text-white");
+    gisButton.classList.add("text-white");
+    gisButton.classList.remove("active");
+    logoImage.src='img/Logo SMC.png'
+    companyName.textContent="PT. Serayu Multi connection";
+});

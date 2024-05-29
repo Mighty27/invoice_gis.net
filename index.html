@@ -31,7 +31,8 @@
 
         .page {
             width: 21cm;
-            min-height: 29.7cm;
+            height: auto;
+            min-height: 27cm;
             padding: 2cm;
             border: 1px #D3D3D3 solid;
             border-radius: 5px;
@@ -73,6 +74,11 @@
             font-size: 20px;
         }
 
+        .footer-table {
+            font-weight: lighter;
+
+        }
+
 
         .lunas {
             text-align: center;
@@ -88,19 +94,30 @@
         }
     </style>
     
-    <div class="book" id="cover">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" id="gis" href="#">GIS Logo Invoice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" id="smc" href="#">SMC Logo Invoice</a>
+            </li>
+          </ul>
+    </nav>
+
+    <div class="book pt-3" id="cover">
         <div class="page bg bg-white" id="mediaCanvas">
             <div class="row invoice">
                 <div class="col-8">
-                    <h3 style="text-transform: uppercase;">cv. grislin internet solution</h3>
+                    <h3 id="company-name" style="text-transform: uppercase;">cv. grislin internet solution</h3>
                     <br>
-                    <h6>
+                    <h6 id="tag-line">
                         YANG ANDA BUTUHKAN UNTUK TERHUBUNG                    </h6>
                     <span style="font-style: italic;">Alamat : KOTA PAGARALAM</span> <br>
                     <span>Telepon : 82178827881 email : grislininternetsolution@gmail.com </span>
                 </div>
                 <div class="col-4 text-right">
-                    <img src="img/LOGO GIS × SMC (Dark Version).png" alt="logo" width="auto" height="90px">
+                    <img src="img/LOGO GIS × SMC (Dark Version).png" id="logo-img" alt="logo" width="auto" height="90px">
 
                 </div>
             </div>
@@ -116,9 +133,9 @@
             <div class="row fromto">
                 <div class="col-6">
                     Kepada :
-                    <h5>SDN 8 PAJAR BULAN</h5>
-                    <h6>6282269431380</h6>
-                    <h6>DESA BANTUNAN</h6>
+                    <h5 id="name-customer">SDN 8 PAJAR BULAN</h5>
+                    <h6 id="no-customer">6282269431380</h6>
+                    <h6 id="customer-address">DESA BANTUNAN</h6>
                 </div>
                 <div class="col-4 text-right">
                     <h6 style="font-weight:bold">No Layanan : </h6>
@@ -127,15 +144,15 @@
                     <h6 style="font-weight:bold">Jatuh Tempo :</h6>
                 </div>
                 <div class="col-2 text-left" style="margin-left:-15 ;">
-                    <h6>240209103317</h6>
-                    <h6>240315179</h6>
-                    <h6>15-03-2024</h6>
-                                        <h6>20-03-2024</h6>
+                    <h6 id="no-service">240209103317</h6>
+                    <h6 id="no-invoice">240315179</h6>
+                    <h6 id="date-invoice">15-03-2024</h6>
+                    <h6 id="breakdown-invoice">20-03-2024</h6>
                 </div>
             </div>
             <br>
             <div class="row justify-content-between mb-2">
-                <div class="col-6">Periode Maret 2024</div>
+                <div class="col-6" id="periode">Periode Maret 2024</div>
                 <div class="col-6 text-right">                 </div>
             </div>
             <table class="table">
@@ -150,36 +167,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                                        
-
-                                                                                            <tr>
+                    <tr>
                                 <td style="text-align: center;">1.</td>
-                                <td>8Mbps <br>
-                                    </td>
-                                <td style="text-align: center">1</td>
-                                <td style="text-align: right">150.000</td>
-                                <td style="text-align: right">
-                                                                            -
-                                                                                                        </td>
-                                <td style="text-align: right">150.000</td>
+                                <td id="product">8Mbps <br>
+                                </td>
+                                <td style="text-align: center" id="quantity">1</td>
+                                <td style="text-align: right" id="price">150.000</td>
+                                <td style="text-align: right" id="discount"></td>
+                                <td style="text-align: right" id="subtotal">150.000</td>
 
-                            </tr>
-                                                            </tbody>
-                <tfoot>
-                    <!-- KODE UNIK -->
-                                                                                                        <!-- END KODE UNIK -->
+                            </tr></tbody>
+                <tfoot style="transform: translateY(10px);">
+                        <tr style="text-align: right;">
+                        <th colspan="5" class="footer-table">ppn 11%</th>
+                        <th class="footer-table" id="ppn">150.000</th>
+                        </tr>
 
-                                                                
-                                                                                                                                            <tr style="text-align: right">
-                        <th colspan="5">Total</th>
-
-                        <th>150.000</th>
-
-                    </tr>
+                        <tr style="text-align: right; transform: translateY(-15px);">
+                        <th colspan="5" style="border: none;">Total</th>
+                        <th style="border: none;" id="total-all">150.000</th>
+                        </tr>
                 </tfoot>
             </table>
             
-                        <span style="font-style: italic; ">* Terhitung : seratus  lima puluh   ribu  </span>
+                        <span style="font-style: italic; " id="terbilang">* Terhitung : seratus  lima puluh   ribu  </span>
 
 
 
@@ -227,8 +238,8 @@
                         </div>
 
                                                                                                                         <div class="row mt-2">
-                                <div class="col"> Diterima Oleh : ZULANDA </div>
-                                <div class="col">Tanggal 16 Maret 2024</div>
+                                <div class="col" id="officer-name"> Diterima Oleh : ZULANDA </div>
+                                <div class="col" id="footer-date">Tanggal 16 Maret 2024</div>
                             </div>
                                                             </footer>
             </div>
@@ -238,7 +249,7 @@
             <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Preview Invoice</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Preview Screenshot</h5>
                 </div>
                 <div class="modal-body bg bg-light">
                     <div class="d-flex align-items-center justify-content-center">
@@ -253,6 +264,105 @@
             </div>
         </div>
 
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="btn-edit" data-toggle="modal" data-target="#exampleModalScrollable">
+    Edit
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Panel Editor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label>Nama Customer</label>
+                  <input type="text" class="form-control" id="form-name-customer" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                  <label>No Customer</label>
+                  <input type="text" class="form-control" id="form-no-customer" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Alamat Customer</label>
+                  <input type="text" class="form-control" id="form-customer-address" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>No Layanan</label>
+                  <input type="text" class="form-control" id="form-no-service" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>No Invoice</label>
+                  <input type="text" class="form-control" id="form-no-invoice" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Tanggal Invoice</label>
+                  <input type="text" class="form-control" id="form-date-invoice" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Tanggal Jatuh Tempo</label>
+                  <input type="text" class="form-control" id="form-breakdown-invoice" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Periode Text</label>
+                  <input type="text" class="form-control" id="form-periode" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Nama Item/Produk</label>
+                  <input type="text" class="form-control" id="form-product" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Jumlah Kuantiti</label>
+                  <input type="number" class="form-control" id="form-quantity" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Harga</label>
+                  <input type="number" class="form-control" id="form-price" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Diskon</label>
+                  <input type="number" class="form-control" id="form-discount" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Subtotal</label>
+                  <input type="number" class="form-control" id="form-subtotal" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>PPN</label>
+                  <input type="number" class="form-control" id="form-ppn" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Total Keseluruhan</label>
+                  <input type="text" class="form-control" id="form-total-all" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Total Terbilang</label>
+                  <input type="text" class="form-control" id="form-terbilang" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Nama Petugas</label>
+                  <input type="text" class="form-control" id="form-officer-name" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                  <label>Tanggal di cetak</label>
+                  <input type="text" class="form-control" id="form-footer-date" placeholder="Another input">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="btn-save" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
     </div>
@@ -260,6 +370,7 @@
     <script src="./script/jquery-3.4.1.min.js.download"></script>
     <script src="./script/bootstrap.js.download"></script>
     <script src="./script/script.js"></script>
-
+    <script src="./script/save.js"></script>
+    
 
 </body></html>
