@@ -30,6 +30,7 @@
             background: black;
         }
 
+
         .page {
             width: 21.7cm;
             height: auto;
@@ -37,6 +38,11 @@
             border: 1px #D3D3D3 solid;
             border-radius: 5px;
             background: white;
+        }
+
+        .template {
+          display: flex;
+          justify-content: space-between;
         }
 
         .invoice img{
@@ -91,7 +97,19 @@
         }
     </style>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark d-flex justify-content-between">
+    <div class="template">
+      <h3 style="color: white;">Pilih Template :</h3>
+      <div class="btn-group dropright" style="margin-left: 10px;">
+        <button type="button" class="btn btn-danger dropdown-toggle" id="wrapper-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          SDN 8 Pajar Bulan
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item active" id="sdn-link" href="#">SDN 8 Pajar Bulan</a>
+          <a class="dropdown-item" id="dukcapil-link" href="#">Dukcapil Kota Pagar Alam</a>
+        </div>
+      </div>
+    </div>
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" id="gis" href="#">GIS Logo Invoice</a>
@@ -130,9 +148,9 @@
       <div class="row fromto">
         <div class="col-6">
           Kepada :
-          <h5 id="name-customer">SDN 8 PAJAR BULAN</h5>
-          <h6 id="no-customer">6282269431380</h6>
-          <h6 id="customer-address">DESA BANTUNAN</h6>
+          <h5 id="name-customer" style="text-transform: uppercase;">SDN 8 PAJAR bulan</h5>
+          <h6 id="no-customer" style="text-transform: uppercase;">6282269431380</h6>
+          <h6 id="customer-address" style="text-transform: uppercase;">DESA BANTUNAN</h6>
         </div>
         <div class="col-4 text-right">
           <h6 style="font-weight:bold">No Layanan : </h6>
@@ -180,7 +198,7 @@
         <tfoot style="transform: translateY(10px);">
           <tr style="text-align: right;">
             <th colspan="5" class="footer-table">ppn 11%</th>
-            <th class="footer-table" id="ppn">150.000</th>
+            <th class="footer-table" id="ppn"></th>
           </tr>
 
           <tr style="text-align: right; transform: translateY(-15px);">
@@ -333,7 +351,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary text-white" id="btn-save" data-dismiss="modal">Save changes</button>
+            <button type="button" class="btn btn-primary" id="btn-save" data-dismiss="modal">Save changes</button>
           </div>
         </div>
       </div>

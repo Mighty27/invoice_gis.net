@@ -11,6 +11,9 @@ const smcButton = document.getElementById("smc");
 var logoImage = document.getElementById("logo-img");
 var companyName = document.getElementById("company-name");
 var tagLine = document.getElementById("tag-line");
+var wrapperTemplate = document.getElementById("wrapper-dropdown");
+var sdnLink = document.getElementById("sdn-link");
+var dukcapilLink = document.getElementById("dukcapil-link");
 
 
 
@@ -68,4 +71,38 @@ smcButton.addEventListener("click", async () => {
     gisButton.classList.remove("active");
     logoImage.src='img/Logo SMC.png'
     companyName.textContent="PT. Serayu Multi connection";
+});
+
+sdnLink.addEventListener("click", () => {
+    sdnLink.classList.add("active");
+    dukcapilLink.classList.remove("active");
+    wrapperTemplate.innerText = sdnLink.innerText;
+    nameCustomer.innerText = ("SDN 8 PAJAR BULAN");
+    noCustomer.innerText = ("6282269431380");
+    customerAddress.innerText = ("DESA BANTUNAN");
+    noService.innerText = ("240209103317");
+    noInvoice.innerText = ("240315179");
+    product.innerText = ("8 mbps");
+    price.innerText = ("150.000");
+    subtotal.innerText = ("150.000");
+    totalAll.innerText = ("150.000");
+    terbilang.innerText = ("* Terhitung : seratus lima puluh ribu");
+    ppn.innerText = ("");    
+});
+
+dukcapilLink.addEventListener("click", () => {
+    dukcapilLink.classList.add("active");
+    sdnLink.classList.remove("active");
+    wrapperTemplate.innerText = dukcapilLink.innerText;
+    nameCustomer.innerText = ("Dukcapil Pagar alam");
+    noCustomer.innerText = ("6281367170389");
+    customerAddress.innerText = ("gunung gare kota pagar alam");
+    noService.innerText = ("240223105350");
+    noInvoice.innerText = ("24223001");
+    product.innerText = ("Dukcapil");
+    price.innerText = ("1.800.000");
+    subtotal.innerText = ("1.800.000");
+    totalAll.innerText = ("1.800.000");
+    terbilang.innerText = ("* Terhitung : satu juta delapan ratus ribu");
+    ppn.innerText = ("");    
 });
